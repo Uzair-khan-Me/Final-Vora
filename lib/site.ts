@@ -1,8 +1,8 @@
 export const SITE_NAME = 'Final Vora';
 export const SITE_TITLE =
-  'Final Vora – YouTube Video Downloader for Android | Final Vora APK';
+  'Final Vora Web – Private Online Video Downloader';
 export const SITE_DESCRIPTION =
-  'Final Vora is a free, privacy-focused video downloader for Android. Download videos from YouTube, Facebook, TikTok & Instagram — right on your device.';
+  'Final Vora Web is a clean, privacy-focused video downloader. Paste a public video link, choose a quality, and save it through your browser.';
 
 export const SITE_KEYWORDS = [
   'Final Vora',

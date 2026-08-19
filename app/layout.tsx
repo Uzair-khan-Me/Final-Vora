@@ -2,8 +2,6 @@ import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import JsonLd from '@/components/JsonLd';
-import { siteWideJsonLd } from '@/lib/schema';
 import {
   DEVELOPER_NAME,
   DEVELOPER_PORTFOLIO,
@@ -59,7 +57,7 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — video downloader for Android`,
+        alt: `${SITE_NAME} Web — private online video downloader`,
       },
     ],
   },
@@ -97,8 +95,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="flex min-h-screen flex-col bg-ink-950 font-sans text-slate-300 antialiased">
-        <JsonLd data={siteWideJsonLd} />
-
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-violet-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"

@@ -1,100 +1,47 @@
-# Final Vora
+# Final Vora Web
 
-**Final Vora** is a standalone video downloader for Android, built with Kotlin.
-This repository contains the official product website — a fast, privacy-focused
-landing page for the app.
+A browser-based version of Final Vora. Paste a public media link, inspect the available combined video/audio formats, and download the selected file.
 
-> **Your videos. Your device. Your control.**
+## Features
 
-## About the site
+- Responsive Next.js web interface
+- Public link analysis and format discovery via `yt-dlp`
+- Direct streamed downloads (files are not retained by the app)
+- Video quality and audio-only choices when the source provides them
+- URL and DNS validation that blocks local/private network targets
+- Docker deployment with `yt-dlp` and FFmpeg included
 
-The website is built with [Next.js](https://nextjs.org) (App Router),
-TypeScript, and Tailwind CSS. It is fully static and deployable directly to
-Vercel with no server, database, or custom backend.
+## Run locally
 
-- Dark, premium, responsive design
-- Strong technical + on-page SEO (metadata, Open Graph, Twitter cards,
-  JSON-LD structured data, `sitemap.xml`, `robots.txt`)
-- Accessible, semantic HTML with keyboard navigation and reduced-motion support
-- The Android APK is hosted on **GitHub Releases** — the site simply links to it
-
-## Android download
-
-The primary Android download points to the official GitHub Releases APK:
-
-```
-https://github.com/Uzair-khan-Me/Final-Vora/releases/download/Android/Final.Vora.apk
-```
-
-Size: **160 MB**
-
-Windows and Linux versions are **coming soon** — there are no placeholder links.
-
-## Getting started
+The server needs current versions of [yt-dlp](https://github.com/yt-dlp/yt-dlp) and FFmpeg on `PATH`.
 
 ```bash
-# install dependencies
 npm install
-
-# run the development server
+python3 -m pip install --user -U yt-dlp
 npm run dev
-# → http://localhost:3000
-
-# production build
-npm run build
-
-# serve the production build
-npm start
 ```
 
-## Deploying to Vercel
+Open http://localhost:3000. Set `YT_DLP_PATH` if the executable has a custom location.
 
-1. Push this repository to GitHub.
-2. Import the repository in [Vercel](https://vercel.com/new).
-3. Vercel auto-detects Next.js and builds with the default settings.
-4. Optionally set the environment variable `NEXT_PUBLIC_SITE_URL` to your
-   production domain (e.g. `https://finalvora.com`).
-5. Deploy, then add a custom domain if desired.
+## Recommended deployment
 
-No VPS, Apache, Nginx, PHP, or custom backend is required. The APK is **not**
-stored in this deployment — it is served from GitHub Releases.
+Use Docker because ordinary static hosting and most short-lived serverless functions cannot run long media downloads.
 
-## Environment variables
-
-| Variable              | Description                                        | Default            |
-| --------------------- | -------------------------------------------------- | ------------------ |
-| `NEXT_PUBLIC_SITE_URL`| Public URL used for canonical links, OG and sitemap | `https://finalvora.com` |
-
-Copy `.env.example` to `.env.local` to configure locally.
-
-## Project structure
-
-```
-app/                  # Next.js App Router
-  layout.tsx          # Root layout + SEO metadata
-  page.tsx            # Home / landing page
-  privacy/page.tsx    # Privacy information
-  sitemap.ts          # /sitemap.xml
-  robots.ts           # /robots.txt
-  icon.svg            # Favicon
-  opengraph-image.tsx # Dynamic Open Graph / Twitter card image
-  globals.css         # Tailwind + global styles
-
-components/           # Reusable, section-based components
-  Navbar.tsx  Hero.tsx  Features.tsx  Platforms.tsx
-  HowItWorks.tsx  PrivacySection.tsx  TechnologySection.tsx
-  DownloadCTA.tsx  FAQ.tsx  Developer.tsx  Footer.tsx
-  SupportedSources.tsx  Logo.tsx  BrandIcons.tsx  Reveal.tsx  ...
-
-lib/                  # Site constants + structured data
-public/               # Static assets (developer image)
+```bash
+docker build -t final-vora-web .
+docker run --rm -p 3000:3000 final-vora-web
 ```
 
-## Developer
+Deploy that image to a container host with adequate bandwidth and request duration limits. The site is **not a fully static Vercel deployment**: `/api/info` and `/api/download` execute server-side.
 
-Developed by **Uzair Ali** — [Portfolio](https://uzairali-18.github.io/Portfolio/).
+## Responsible use
 
----
+Download only media you created, media in the public domain, or media you have permission to save. Platform terms, copyright rules, authentication, region restrictions, and DRM still apply. Final Vora does not bypass DRM or access private videos.
 
-Please respect copyright, platform terms of service, and applicable laws when
-downloading content.
+## Privacy
+
+No account or application database is used. A submitted URL is sent to this server so `yt-dlp` can retrieve metadata and stream the requested media. Operators should configure infrastructure access-log retention according to their own privacy policy.
+
+## Stack
+
+Next.js 15, React 19, TypeScript, Tailwind CSS, yt-dlp, and FFmpeg.
