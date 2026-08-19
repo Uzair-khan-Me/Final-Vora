@@ -40,7 +40,6 @@ export const GITHUB_REPO = 'https://github.com/Uzair-khan-Me/Final-Vora';
 
 export const DEVELOPER_NAME = 'Uzair Ali';
 export const DEVELOPER_ROLE = 'Developer of Final Vora';
-export const DEVELOPER_PORTFOLIO = 'https://uzairali-18.github.io/Portfolio/';
 export const DEVELOPER_EMAIL = 'uzairali10005@gmail.com';
 export const DEVELOPER_IMAGE = '/images/uzair-ali.jpg';
 
