@@ -32,3 +32,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# project source bundle (download artifact)
+Final-Vora-website-source.zip
