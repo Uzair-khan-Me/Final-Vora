@@ -44,6 +44,9 @@ export const metadata: Metadata = {
   creator: DEVELOPER_NAME,
   publisher: DEVELOPER_NAME,
   category: 'software',
+  verification: {
+    google: 'nZ9hyv7joH0iDs8MwgbSqWi4tnFrzpRW5y0RQgug8M0',
+  },
   alternates: {
     canonical: '/',
   },
