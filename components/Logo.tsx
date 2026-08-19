@@ -7,33 +7,22 @@ type LogoProps = {
 };
 
 /**
- * Final Vora wordmark. A simple geometric mark (a rounded square with a
- * downward "download" arrow) paired with the brand name.
+ * Final Vora wordmark — the official Vora logo mark alongside the brand name.
  */
 export default function Logo({ className, markClassName }: LogoProps) {
   return (
     <span className={cn('inline-flex items-center gap-2.5', className)}>
-      <span
+      <img
+        src="/images/vora-logo.png"
+        alt=""
+        width={34}
+        height={36}
+        aria-hidden="true"
         className={cn(
-          'relative inline-flex h-8 w-8 items-center justify-center rounded-[10px] bg-gradient-to-br from-violet-500 to-indigo-600 shadow-glow-sm',
+          'h-9 w-auto object-contain drop-shadow-[0_0_14px_rgba(139,92,246,0.35)]',
           markClassName,
         )}
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          className="h-[18px] w-[18px] text-white"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 3v11" />
-          <path d="m7.5 9.5 4.5 4.5 4.5-4.5" />
-          <path d="M5 20h14" />
-        </svg>
-      </span>
+      />
       <span className="font-display text-[1.05rem] font-semibold tracking-tight text-white">
         Final&nbsp;Vora
       </span>
