@@ -64,8 +64,8 @@ export default function Hero() {
             style={enter('120ms')}
           >
             Final Vora is a fast, private, standalone video downloader for
-            Android. It works with YouTube, Facebook, TikTok, and Instagram —
-            and it keeps the whole experience on your device.
+            Android — free to download and built to keep everything on your
+            device. It works with YouTube, Facebook, TikTok, and Instagram.
           </p>
 
           <div

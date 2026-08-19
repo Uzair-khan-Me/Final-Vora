@@ -28,7 +28,7 @@ export default function Platforms() {
         <div className="mx-auto mt-14 grid max-w-4xl gap-5 md:grid-cols-3">
           {/* Android — available */}
           <Reveal>
-            <article className="relative flex h-full flex-col rounded-3xl border border-violet-400/25 bg-gradient-to-b from-violet-500/[0.08] to-ink-850/80 p-6 shadow-glow-sm">
+            <article className="relative flex h-full flex-col rounded-3xl border border-violet-400/25 bg-gradient-to-b from-violet-500/[0.08] to-ink-850/80 p-6 shadow-glow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-glow">
               <span className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-emerald-400/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
                 <Check className="h-3 w-3" aria-hidden="true" />
                 Available

@@ -96,8 +96,8 @@ export default function OgImage() {
             maxWidth: '880px',
           }}
         >
-          A fast, private, standalone video downloader for Android. YouTube,
-          Facebook, TikTok, Instagram.
+          A free, private video downloader for Android. YouTube, Facebook,
+          TikTok, Instagram.
         </div>
 
         {/* CTA pill + tagline */}

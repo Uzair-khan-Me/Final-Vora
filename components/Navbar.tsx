@@ -56,7 +56,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="rounded-lg px-3.5 py-2 text-sm font-medium text-slate-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/70"
+                className="relative rounded-lg px-3.5 py-2 text-sm font-medium text-slate-300 transition-colors after:absolute after:inset-x-3.5 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-gradient-to-r after:from-violet-400 after:to-sky-400 after:transition-transform after:duration-300 hover:text-white hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/70"
               >
                 {link.label}
               </a>

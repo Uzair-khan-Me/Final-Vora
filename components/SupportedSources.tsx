@@ -31,7 +31,7 @@ export default function SupportedSources() {
         <div className="mx-auto mt-12 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
           {SOURCES.map((source, i) => (
             <Reveal key={source.name} delay={i * 80}>
-              <div className="group flex flex-col items-center gap-3 rounded-2xl border border-white/[0.07] bg-ink-850/70 px-4 py-7 shadow-card transition-colors duration-300 hover:border-white/[0.14] hover:bg-ink-800/80">
+              <div className="group flex flex-col items-center gap-3 rounded-2xl border border-white/[0.07] bg-ink-850/70 px-4 py-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.14] hover:bg-ink-800/80 hover:shadow-glow-sm">
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.03] text-slate-200 transition-colors duration-300 group-hover:text-white">
                   <source.Icon className="h-6 w-6" />
                 </span>

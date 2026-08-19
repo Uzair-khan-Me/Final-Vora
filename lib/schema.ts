@@ -46,6 +46,7 @@ export const softwareAppSchema = {
   '@type': 'SoftwareApplication',
   '@id': `${siteUrl}/#software`,
   name: SITE_NAME,
+  alternateName: ['Final Vora APK', 'Final Vora Video Downloader'],
   applicationCategory: 'MultimediaApplication',
   applicationSubCategory: 'Video Downloader',
   operatingSystem: 'Android',
@@ -54,6 +55,8 @@ export const softwareAppSchema = {
   downloadUrl: APK_URL,
   fileSize: APK_SIZE,
   installUrl: APK_URL,
+  keywords:
+    'Final Vora, Final Vora APK, video downloader, Android video downloader, YouTube video downloader, free video downloader',
   author: { '@id': `${siteUrl}/#person` },
   publisher: { '@id': `${siteUrl}/#person` },
   creator: { '@id': `${siteUrl}/#person` },
@@ -107,6 +110,38 @@ export const faqSchema = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Yes. Final Vora is designed to download videos from YouTube, Facebook, TikTok, and Instagram.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can Final Vora download YouTube videos?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. YouTube is one of the platforms Final Vora supports, alongside Facebook, TikTok, and Instagram.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Final Vora a free video downloader?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Final Vora APK is free to download from the official GitHub Releases page.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Final Vora the same as yt-dlp?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. yt-dlp is a free, open-source command-line video downloader for desktops and servers. Final Vora is a standalone Android app built with Kotlin that gives you a simple, on-device workflow on your phone.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why choose an app instead of a command-line tool like yt-dlp?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'If you want to download videos on your phone without using a terminal, Final Vora offers a tap-to-download experience. Command-line tools like yt-dlp are powerful, but they are built for desktops and scripting.',
       },
     },
     {

@@ -21,6 +21,22 @@ const FAQS = [
     a: 'Yes. Final Vora is designed to download videos from YouTube, Facebook, TikTok, and Instagram.',
   },
   {
+    q: 'Can Final Vora download YouTube videos?',
+    a: 'Yes. YouTube is one of the platforms Final Vora supports, alongside Facebook, TikTok, and Instagram.',
+  },
+  {
+    q: 'Is Final Vora a free video downloader?',
+    a: 'The Final Vora APK is free to download from the official GitHub Releases page.',
+  },
+  {
+    q: 'Is Final Vora the same as yt-dlp?',
+    a: 'No. yt-dlp is a free, open-source command-line video downloader for desktops and servers. Final Vora is a standalone Android app built with Kotlin that gives you a simple, on-device workflow on your phone.',
+  },
+  {
+    q: 'Why choose an app instead of a command-line tool like yt-dlp?',
+    a: 'If you want to download videos on your phone without using a terminal, Final Vora offers a tap-to-download experience. Command-line tools like yt-dlp are powerful, but they are built for desktops and scripting.',
+  },
+  {
     q: 'Is Final Vora available for Windows?',
     a: 'Not yet. A Windows version is coming soon. The Android app is available now.',
   },

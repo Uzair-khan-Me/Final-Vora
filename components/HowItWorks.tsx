@@ -50,7 +50,7 @@ export default function HowItWorks() {
 
           {STEPS.map((step, i) => (
             <Reveal key={step.step} delay={i * 120}>
-              <article className="relative h-full rounded-2xl border border-white/[0.07] bg-ink-850/80 p-6 shadow-card transition-colors duration-300 hover:border-white/[0.14]">
+              <article className="relative h-full rounded-2xl border border-white/[0.07] bg-ink-850/80 p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.14] hover:shadow-glow-sm">
                 <div className="flex items-center justify-between">
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/[0.08] bg-gradient-to-br from-violet-500/15 to-indigo-500/10 text-violet-300">
                     <step.icon className="h-5 w-5" aria-hidden="true" />

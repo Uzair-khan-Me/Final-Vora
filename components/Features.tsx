@@ -71,7 +71,7 @@ export default function Features() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((feature, i) => (
             <Reveal key={feature.title} delay={(i % 3) * 90}>
-              <article className="group h-full rounded-2xl border border-white/[0.07] bg-ink-850/80 p-6 shadow-card transition-colors duration-300 hover:border-white/[0.14] hover:bg-ink-800/80">
+              <article className="group h-full rounded-2xl border border-white/[0.07] bg-ink-850/80 p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.14] hover:bg-ink-800/80 hover:shadow-glow-sm">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.08] bg-gradient-to-br from-violet-500/15 to-indigo-500/10 text-violet-300 transition-transform duration-300 group-hover:scale-105">
                   <feature.icon className="h-5 w-5" aria-hidden="true" />
                 </span>

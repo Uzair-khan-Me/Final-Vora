@@ -1,26 +1,34 @@
 export const SITE_NAME = 'Final Vora';
 export const SITE_TITLE =
-  'Final Vora – Video Downloader for Android | Final Vora APK';
+  'Final Vora – YouTube Video Downloader for Android | Final Vora APK';
 export const SITE_DESCRIPTION =
-  'Final Vora is a fast, privacy-focused standalone video downloader for Android. Download videos from YouTube, Facebook, TikTok and Instagram with a device-first experience.';
+  'Final Vora is a free, privacy-focused video downloader for Android. Download videos from YouTube, Facebook, TikTok & Instagram — right on your device.';
 
 export const SITE_KEYWORDS = [
   'Final Vora',
   'Final Vora APK',
   'Final Vora download',
   'Final Vora Android',
-  'Final Vora video downloader',
   'Final Vora app',
   'Final Vora for Android',
   'Final Vora APK download',
+  'Final Vora video downloader',
   'Vora APK',
   'Vora video downloader',
   'download Final Vora',
+  'video downloader',
   'video downloader for Android',
+  'Android video downloader',
   'YouTube video downloader',
+  'free video downloader',
+  'yt video downloader',
+  'free yt video downloader',
+  'video downloader app',
+  'download YouTube videos',
   'Facebook video downloader',
   'TikTok video downloader',
   'Instagram video downloader',
+  'yt-dlp alternative',
 ];
 
 export const APK_URL =
@@ -34,6 +42,7 @@ export const DEVELOPER_NAME = 'Uzair Ali';
 export const DEVELOPER_ROLE = 'Developer of Final Vora';
 export const DEVELOPER_PORTFOLIO = 'https://uzairali-18.github.io/Portfolio/';
 export const DEVELOPER_EMAIL = 'uzairali10005@gmail.com';
+export const DEVELOPER_IMAGE = '/images/uzair-ali.jpg';
 
 export const SUPPORTED_SOURCES = [
   'YouTube',

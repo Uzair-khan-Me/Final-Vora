@@ -5,6 +5,7 @@ import HowItWorks from '@/components/HowItWorks';
 import Platforms from '@/components/Platforms';
 import PrivacySection from '@/components/PrivacySection';
 import TechnologySection from '@/components/TechnologySection';
+import ComparisonSection from '@/components/ComparisonSection';
 import DownloadCTA from '@/components/DownloadCTA';
 import FAQ from '@/components/FAQ';
 import Developer from '@/components/Developer';
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Platforms />
       <PrivacySection />
       <TechnologySection />
+      <ComparisonSection />
       <DownloadCTA />
       <FAQ />
       <Developer />
