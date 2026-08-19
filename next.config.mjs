@@ -21,6 +21,9 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // Arena previews are served from a proxied e2b.app hostname. Without this,
+  // Next.js blocks the client bundles and the form appears unresponsive.
+  allowedDevOrigins: ['*.e2b.app'],
   async headers() {
     return [
       {

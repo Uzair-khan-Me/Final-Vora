@@ -23,6 +23,18 @@ npm run dev
 
 Open http://localhost:3000. Set `YT_DLP_PATH` if the executable has a custom location.
 
+### YouTube server configuration
+
+YouTube can rate-limit or challenge datacenter IP addresses. Final Vora supports these optional server variables:
+
+| Variable | Purpose |
+| --- | --- |
+| `YT_DLP_PATH` | Custom path to the `yt-dlp` executable |
+| `YT_DLP_PROXY` | HTTP/SOCKS proxy used by `yt-dlp` when the host cannot reach a provider |
+| `YT_DLP_COOKIES` | Path to a Netscape-format cookies file for server verification challenges |
+
+Never commit a cookies file to Git. Keep `yt-dlp` current because provider integrations change frequently.
+
 ## Recommended deployment
 
 Use Docker because ordinary static hosting and most short-lived serverless functions cannot run long media downloads.

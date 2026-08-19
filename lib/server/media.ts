@@ -70,9 +70,17 @@ export type YtDlpInfo = {
   formats?: YtDlpFormat[];
 };
 
+export function ytDlpRuntimeArgs(): string[] {
+  const args = ['--js-runtimes', 'node'];
+  if (process.env.YT_DLP_PROXY) args.push('--proxy', process.env.YT_DLP_PROXY);
+  if (process.env.YT_DLP_COOKIES) args.push('--cookies', process.env.YT_DLP_COOKIES);
+  return args;
+}
+
 export function runYtDlpJson(url: string): Promise<YtDlpInfo> {
   return new Promise((resolve, reject) => {
     const child = spawn(/* turbopackIgnore: true */ process.env.YT_DLP_PATH || 'yt-dlp', [
+      ...ytDlpRuntimeArgs(),
       '--dump-single-json',
       '--no-playlist',
       '--skip-download',
@@ -115,8 +123,17 @@ export function runYtDlpJson(url: string): Promise<YtDlpInfo> {
 }
 
 function cleanYtDlpError(message: string) {
+  if (/TLS\/SSL|SSL connection|certificate/i.test(message)) {
+    return 'The server could not establish a secure connection to the video provider. Try again shortly or configure a server proxy.';
+  }
+  if (/Sign in to confirm|not a bot|cookies-from-browser/i.test(message)) {
+    return 'YouTube asked this server to verify itself. The server operator needs to configure YouTube cookies.';
+  }
+  if (/Private video|login required|members-only/i.test(message)) {
+    return 'This video is private or requires an account. Only public videos are supported.';
+  }
   const line = message.split('\n').find((item) => item.includes('ERROR:'));
-  return (line?.replace(/^.*ERROR:\s*/, '') || 'This video could not be read. It may be private or restricted.').slice(0, 300);
+  return (line?.replace(/^.*ERROR:\s*/, '') || 'This video could not be read. It may be private or restricted.').slice(0, 220);
 }
 
 export function safeFormatId(value: string | null) {

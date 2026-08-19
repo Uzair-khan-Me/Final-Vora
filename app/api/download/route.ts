@@ -1,5 +1,5 @@
 import { spawn } from 'node:child_process';
-import { safeExtension, safeFormatId, validatePublicMediaUrl } from '@/lib/server/media';
+import { safeExtension, safeFormatId, validatePublicMediaUrl, ytDlpRuntimeArgs } from '@/lib/server/media';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -17,6 +17,7 @@ export async function GET(request: Request) {
     const ext = safeExtension(params.get('ext'));
 
     const child = spawn(/* turbopackIgnore: true */ process.env.YT_DLP_PATH || 'yt-dlp', [
+      ...ytDlpRuntimeArgs(),
       '--no-playlist',
       '--no-warnings',
       '--no-progress',
