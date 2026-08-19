@@ -30,8 +30,8 @@ export default function Developer() {
               <Image
                 src={DEVELOPER_IMAGE}
                 alt={`${DEVELOPER_NAME} — ${DEVELOPER_ROLE}`}
-                width={480}
-                height={607}
+                width={600}
+                height={800}
                 sizes="(min-width: 768px) 240px, 200px"
                 className="h-56 w-44 rounded-3xl border border-white/10 object-cover shadow-card transition-transform duration-300 hover:scale-[1.02] sm:h-64 sm:w-48"
                 priority={false}
