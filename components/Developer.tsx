@@ -1,14 +1,12 @@
 import Image from 'next/image';
 import { ExternalLink, Mail } from 'lucide-react';
 import Reveal from '@/components/Reveal';
-import { GitHubIcon } from '@/components/BrandIcons';
 import {
   DEVELOPER_EMAIL,
   DEVELOPER_IMAGE,
   DEVELOPER_NAME,
   DEVELOPER_PORTFOLIO,
   DEVELOPER_ROLE,
-  GITHUB_REPO,
 } from '@/lib/site';
 
 export default function Developer() {
@@ -74,15 +72,6 @@ export default function Developer() {
               >
                 <Mail className="h-4 w-4" aria-hidden="true" />
                 Contact Developer
-              </a>
-              <a
-                href={GITHUB_REPO}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300 transition-colors hover:border-white/20 hover:bg-white/[0.07] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/70"
-                aria-label="Final Vora on GitHub"
-              >
-                <GitHubIcon className="h-5 w-5" />
               </a>
             </div>
           </Reveal>
